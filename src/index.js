@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+//STEP 20
+import { Provider } from 'react-redux'; 
+import store from './redux/store'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+//STEP 21
+<Provider store={store}>
+<App />
+
+</Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+//"App" inke bich me dalne ka matlab redux sara data "<App />" access kr sakta hai.
+// Abhi sara data redux se aa rha hai.

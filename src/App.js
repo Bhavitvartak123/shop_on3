@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';  //Step 1 Touter Setup
+
+import Category from './Category';
+import Product from './Product';
+import NotFound from './NotFound';
+import Home from './Home';
+
+import Footer from './template/Footer';
+import Header from './template/Header';
+import Menubar from './template/Menubar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='container'>
+        <BrowserRouter>
+
+          <Header />
+          <Menubar />
+
+          <div className='row content-area'>
+            <div className='col'>
+              <Routes>
+                <Route path='/home' element={<Home />} />
+                <Route path='/category' element={<Category />} />
+                <Route path='/product' element={<Product />} />
+                <Route path='/' element={<Home />} />
+                <Route path='/*' element={<NotFound />} />
+              </Routes>
+            </div>
+          </div>
+
+          <Footer />
+
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
-
 export default App;
