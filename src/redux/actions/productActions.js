@@ -24,11 +24,6 @@ export const setProducts =  (products) => ({
 
 
 
-
-
-
-
-
 //Action do chije hoti hai "Type" & "Payload"
 //Paylaod me parameters pass hote hai for ex products is parameter
 //Type me "action-types" me jo rhega vo aajyega ex "SET_PRODUCTS"

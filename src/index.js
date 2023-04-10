@@ -19,3 +19,4 @@ root.render(
 
 //"App" inke bich me dalne ka matlab redux sara data "<App />" access kr sakta hai.
 // Abhi sara data redux se aa rha hai.
+//Done to wraping.
